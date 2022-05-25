@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <br>
+    <p id="demop"></p>
+    <script>
+        var person = {
+            fname: "jonn",
+            lname: "cena",
+            id: 101,
+            fullname: function () {
+                return this.fname + " " + this.lname;
+            },
+            userid: function (name, id) {
+                return name + id;
+            }
+        };
+
+        document.getElementById("demo").innerHTML =
+            "frist name  : " + person.fname
+            + "<br>" +
+            "last name : " + person["lname"]
+            + "<br>" +
+            " id : " + person.id
+            + "<br>" +
+            "full name : " + person.fullname()
+            + "<br>" +
+            "user id : " + person.userid(person.fname, person.id);
+
+    </script>
+</body>
+
+</html>
