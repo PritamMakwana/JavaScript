@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Loops</h1>
+
+    <h2>for loop</h2>
+    <p id="demo"></p>
+
+    <h2>for in</h2>
+    <p id="demo1"></p>
+
+    <h2>for of</h2>
+    <p id="demo2"></p>
+
+    <h2>while</h2>
+    <p id="demo3"></p>
+
+    <h2>do-while</h2>
+    <p id="demo4"></p>
+
+    <h1>Jump out statement</h1>
+
+    <h2>break</h2>
+    <p id="demo5"></p>
+
+    <h2>continue</h2>
+    <p>A loop with a <b>continue</b> statement.</p>
+
+    <p>A loop which will skip the step where i = 3.</p>
+
+    <p id="demo6"></p>
+
+    <h2>label</h2>
+    <p id="demo7"></p>
+
+
+    <script>
+        //for loop
+        let text = "";
+        for (let i = 0; i < 5; i++) {
+            text += "The number is " + i + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+
+        //for in
+        const person = { fname: "John", lname: "Doe", age: 25 };
+
+        let txt = "";
+        for (let x in person) {
+            txt += person[x] + " ";
+        }
+
+        document.getElementById("demo1").innerHTML = txt;
+
+        //for of
+        const cars = ["BMW", "Volvo", "Mini"];
+
+        let text1 = "";
+        for (let x of cars) {
+            text1 += x + "<br>";
+        }
+
+        document.getElementById("demo2").innerHTML = text1;
+
+        //while
+
+        let text2 = "";
+        let i = 0;
+        while (i < 10) {
+            text2 += "<br>The number is " + i;
+            i++;
+        }
+        document.getElementById("demo3").innerHTML = text2;
+
+        //do while
+
+        let text3 = ""
+        let j = 0;
+
+        do {
+            text3 += "<br>The number is " + j;
+            j++;
+        }
+        while (j < 10);
+
+        document.getElementById("demo4").innerHTML = text3;
+
+        //break
+
+        let text4 = "";
+        for (let i = 0; i < 10; i++) {
+            if (i === 3) {
+                break;
+            }
+            text4 += "The number is " + i + "<br>";
+        }
+
+        document.getElementById("demo5").innerHTML = text4;
+
+        //continue
+
+        let text5 = "";
+        for (let i = 0; i < 10; i++) {
+            if (i === 3) {
+                continue;
+            }
+            text5 += "The number is " + i + "<br>";
+        }
+        document.getElementById("demo6").innerHTML = text5;
+
+        // label
+        const cars7 = ["BMW", "Volvo", "Saab", "Ford"];
+        let text7 = "";
+
+        list: {
+            text7 += cars7[0] + "<br>";
+            text7 += cars7[1] + "<br>";
+            break list;
+            text7 += cars7[2] + "<br>";
+            text7 += cars7[3] + "<br>";
+        }
+
+        document.getElementById("demo7").innerHTML = text7;
+
+    </script>
+
+</body>
+
+</html>
