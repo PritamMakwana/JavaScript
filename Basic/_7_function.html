@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+
+<body>
+
+    <p id="f1"></p>
+    <p id="f2"></p>
+    <p id="f3"></p>
+    <p id="f4"></p>
+
+
+    <script>
+
+        function no_arg_no_ret() {
+            document.getElementById("f1").innerHTML = "hello world 1";
+        }
+        function with_arg_with_ret(p1, p2) {
+            return p1 + p2;
+        }
+        function with_arg_no_ret(p1, p2) {
+            document.getElementById("f3").innerHTML = p1 + p2;
+        }
+        function no_arg_with_ret() {
+            return "hello world 2";
+        }
+
+        no_arg_no_ret();
+        document.getElementById("f2").innerHTML = with_arg_with_ret(10, 20);
+        with_arg_no_ret(10, 2);
+        document.getElementById("f4").innerHTML = no_arg_with_ret();
+
+    </script>
+
+
+
+</body>
+
+</html>
