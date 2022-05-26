@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript Objects</h2>
+
+    <h3>1</h3>
+    <p>Displaying a JavaScript object will output [object Object]:</p>
+    <p id="demo"></p>
+
+    <h3>2</h3>
+    <p>Display object properties:</p>
+    <p id="demo2"></p>
+
+
+    <h3>3</h3>
+    <p>Display object properties:</p>
+    <p id="demo3"></p>
+
+    <h3>4</h3>
+    <p>Object.values() converts an object to an array.</p>
+    <p id="demo4"></p>
+
+    <h3>5</h3>
+    <p>Display properties in JSON format:</p>
+    <p id="demo5"></p>
+
+    <script>
+        const person = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+
+        document.getElementById("demo").innerHTML = person;
+
+
+        const person2 = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+
+        document.getElementById("demo2").innerHTML = person2.name + ", " + person2.age + ", " + person2.city;
+
+
+        const person3 = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+
+        let txt = "";
+        for (let x in person3) {
+            txt += person[x] + " ";
+        };
+
+        document.getElementById("demo3").innerHTML = txt;
+
+
+        const person4 = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+
+        document.getElementById("demo4").innerHTML = Object.values(person4);
+
+
+        const person5 = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+
+        document.getElementById("demo5").innerHTML = JSON.stringify(person5);
+
+    </script>
+
+</body>
+
+</html>
