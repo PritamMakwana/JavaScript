@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript Objects</h2>
+    <h3>1</h3>
+    <p>Creating and using an object method.</p>
+    <p>A method is actually a function definition stored as a property value.</p>
+
+    <p id="demo"></p>
+
+    <h3>2</h3>
+    <p>An object method is a function definition stored as a property value.</p>
+    <p>If you access it without (), it will return the function definition:</p>
+
+    <p id="demo2"></p>
+
+
+    <h3>3</h3>
+    <p id="demo3"></p>
+
+    <h3>4</h3>
+    <p id="demo4"></p>
+
+    <script>
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+
+        document.getElementById("demo").innerHTML = person.fullName();
+
+
+
+        const person2 = {
+            firstName: "admin",
+            lastName: "world",
+            id: 5566,
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+
+        document.getElementById("demo2").innerHTML = person2.fullName;
+
+
+        const person3 = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+        };
+        person3.name = function () {
+            return this.firstName + " " + this.lastName;
+        };
+
+        document.getElementById("demo3").innerHTML =
+            "My father is " + person3.name();
+
+
+
+        const person4 = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+        };
+        person4.name = function () {
+            return (this.firstName + " " + this.lastName).toUpperCase();
+        };
+
+        document.getElementById("demo4").innerHTML =
+            "My father is " + person4.name();
+
+    </script>
+</body>
+
+</html>
