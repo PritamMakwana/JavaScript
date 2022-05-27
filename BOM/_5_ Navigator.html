@@ -1,0 +1,116 @@
+<!-- The window.navigator object contains information about the visitor's browser.
+
+Window Navigator
+The window.navigator object can be written without the window prefix.
+
+Some examples:
+
+navigator.appName
+navigator.appCodeName
+navigator.platform -->
+
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>The Navigator Object</h2>
+
+    <h2>1</h2>
+    <p>The cookieEnabled property returns true if cookies are enabled:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("demo").innerHTML =
+            "navigator.cookieEnabled is " + navigator.cookieEnabled;
+    </script>
+
+    <h2>2</h2>
+    <p>The appName property returns the application name of the browser:</p>
+
+    <p id="demo2"></p>
+
+    <p>Strange enough, "Netscape" is the application name for IE11, Chrome, Firefox, and Safari.</p>
+
+    <script>
+        document.getElementById("demo2").innerHTML =
+            "navigator.appName is " + navigator.appName;
+    </script>
+
+
+    <h2>3</h2>
+    <p>The appCodeName property returns the code name of the browser.</p>
+
+    <p>Do not rely on it! "Mozilla" is the application code name for Chrome, Firefox, IE, Safari, and Opera.</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        document.getElementById("demo3").innerHTML =
+            "navigator.appCodeName is " + navigator.appCodeName;
+    </script>
+
+    <h2>4</h2>
+    <p>The product property returns the product name of the browser.</p>
+
+    <p>Do not rely on it! Most browsers returns "Gecko" as product name!</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        document.getElementById("demo4").innerHTML =
+            "navigator.product is " + navigator.product;
+    </script>
+
+    <h2>5</h2>
+    <p>The appVersion property returns version information about the browser:</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        document.getElementById("demo5").innerHTML = navigator.appVersion;
+    </script>
+
+    <h2>6</h2>
+    <p>The appVersion property returns version information about the browser:</p>
+
+    <p id="demo6"></p>
+
+    <script>
+        document.getElementById("demo6").innerHTML = navigator.appVersion;
+    </script>
+
+    <h2>7</h2>
+    <p>The language property returns the browser's language:</p>
+
+    <p id="demo7"></p>
+
+    <script>
+        document.getElementById("demo7").innerHTML =
+            "navigator.language is " + navigator.language;
+    </script>
+
+    <h2>8</h2>
+    <p>The onLine property returns true if the browser is online:</p>
+
+    <p id="demo8"></p>
+
+    <script>
+        document.getElementById("demo8").innerHTML =
+            "navigator.onLine is " + navigator.onLine;
+    </script>
+
+    <h2>9</h2>
+    <p>The javaEnabled() method returns true if Java is enabled:</p>
+
+    <p id="demo9"></p>
+
+    <script>
+        document.getElementById("demo9").innerHTML =
+            "javaEnabled is " + navigator.javaEnabled();
+    </script>
+
+</body>
+
+</html>
