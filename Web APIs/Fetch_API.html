@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <body>
-<p id="demo">Fetch a file to change this text.</p>
-<script>
+    <h2>1 .file and displays</h2>
+    <p id="demo">Fetch a file to change this text.</p>
+    <script>
 
-// var file = "D:\\Web\\JavaScript\\Web APIs\\fetch_info.txt";
-// window.location.href = file;
+        var file = "fetch_info.txt";
 
-var file ="fetch_info.txt";
+        fetch(file)
+            .then(x => x.text())
+            .then(y => document.getElementById("demo").innerHTML = y);
 
-fetch (file)
-.then(x => x.text())
-.then(y => document.getElementById("demo").innerHTML = y);
+    </script>
 
-</script>
+    <h2>2. async and await</h2>
+    <p id="demo1">Fetch a file to change this text.</p>
+
+    <script>
+        getText("fetch_info.txt");
+        async function getText(file) {
+            let x1 = await fetch(file);
+            let y1 = await x1.text();
+            document.getElementById("demo1").innerHTML = y1;
+        }
+    </script>
+
+    <h2>3.Use understandable names instead of x and y </h2>
+    <p id="demo2">Fetch a file to change this text.</p>
+
+    <script>
+        getText("fetch_info.txt");
+
+        async function getText(file) {
+            let myObject = await fetch(file);
+            let myText = await myObject.text();
+            document.getElementById("demo2").innerHTML = myText;
+        }
+    </script>
+
+
+
 </body>
+
 </html>
