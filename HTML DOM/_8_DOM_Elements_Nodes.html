@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript HTML DOM</h2>
+    <h1>1.Creating New HTML Elements (Nodes)</h1>
+    <p>Add a new HTML Element.</p>
+
+    <div id="div1">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+    </div>
+
+    <script>
+        const para = document.createElement("p");
+        const node = document.createTextNode("This is new.");
+        para.appendChild(node);
+        const element = document.getElementById("div1");
+        element.appendChild(para);
+    </script>
+
+
+    <h1>2.Creating New HTML Elements (Nodes)</h1>
+    <p>Add a new HTML Element.</p>
+
+    <div id="div12">
+        <p id="p12">This is a paragraph.</p>
+        <p id="p22">This is another paragraph.</p>
+    </div>
+
+    <script>
+        const para2 = document.createElement("p");
+        const node2 = document.createTextNode("This is new.");
+        para2.appendChild(node2);
+
+        const element2 = document.getElementById("div12");
+        const child2 = document.getElementById("p12");
+        element2.insertBefore(para2, child2);
+    </script>
+
+    <h1>3. Removing Existing HTML Elements</h1>
+    <h3>Remove an HTML Element.</h3>
+
+    <div>
+        <p id="p13">This is a paragraph.</p>
+        <p id="p23">This is another paragraph.</p>
+    </div>
+
+    <button onclick="myFunction3()">Remove Element</button>
+
+    <script>
+        function myFunction3() {
+            document.getElementById("p13").remove();
+        }
+    </script>
+
+    <h1>4. Removing a Child Node</h1>
+
+    <p>Remove Child Element</p>
+
+    <div id="div14">
+        <p id="p14">This is a paragraph.</p>
+        <p id="p24">This is another paragraph.</p>
+    </div>
+
+    <script>
+        const parent4 = document.getElementById("div14");
+        const child4 = document.getElementById("p14");
+        parent4.removeChild(child4);
+    </script>
+
+    <h1>5. Replacing HTML Elements </h1>
+
+    <h3>Replace an HTML Element.</h3>
+
+    <div id="div15">
+        <p id="p15">This is a paragraph.</p>
+        <p id="p25">This is a paragraph.</p>
+    </div>
+
+    <script>
+        const parent5 = document.getElementById("div15");
+        const child5 = document.getElementById("p15");
+        const para5 = document.createElement("p");
+        const node5 = document.createTextNode("This is new.");
+        para5.appendChild(node5);
+        parent5.replaceChild(para5, child5);
+    </script>
+
+</body>
+
+</html>
