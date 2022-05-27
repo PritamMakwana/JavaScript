@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo">Fetch a file to change this text.</p>
+<script>
+
+// var file = "D:\\Web\\JavaScript\\Web APIs\\fetch_info.txt";
+// window.location.href = file;
+
+var file ="fetch_info.txt";
+
+fetch (file)
+.then(x => x.text())
+.then(y => document.getElementById("demo").innerHTML = y);
+
+</script>
+</body>
+</html>
