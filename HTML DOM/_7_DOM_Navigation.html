@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h3>1</h3>
+    <h1 id="id01">My First Page</h1>
+    <p id="id02"></p>
+
+    <script>
+        document.getElementById("id02").innerHTML = document.getElementById("id01").innerHTML;
+    </script>
+
+    <h3>2</h3>
+    <h1 id="id012">My First Page</h1>
+    <p id="id022"></p>
+
+    <script>
+        document.getElementById("id022").innerHTML = document.getElementById("id012").firstChild.nodeValue;
+    </script>
+
+    <h3>3</h3>
+    <h1 id="id013">My First Page</h1>
+    <p id="id023"></p>
+
+    <script>
+        document.getElementById("id023").innerHTML = document.getElementById("id013").childNodes[0].nodeValue;
+    </script>
+
+
+    <!-- DOM Root Nodes
+There are two special properties that allow access to the full document:
+
+document.body - The body of the document
+document.documentElement - The full document -->
+
+    <h3>4</h3>
+    <p>Displaying document.body</p>
+
+    <p id="demo4" style="border: 2px solid chartreuse;"></p>
+
+    <script>
+        // document.getElementById("demo4").innerHTML = document.body.innerHTML;
+        document.getElementById("demo4").innerHTML = document.documentElement.innerHTML;
+
+    </script>
+
+    <h3>5</h3>
+    <h2>The nodeName Property</h2>
+
+    <h1 id="id015">The nodeValue property specifies the value of a node.</h1>
+    <p id="id025"></p>
+
+    <script>
+        document.getElementById("id025").innerHTML = document.getElementById("id015").nodeName;
+    </script>
+
+
+    <h3>6</h3>
+    <h2>The nodeType Property</h2>
+    The nodeType property is read only. It returns the type of a node.
+    <h1 id="id016">The nodeType property is read only. It returns the type of a node.</h1>
+    <p id="id026"></p>
+
+    <script>
+        document.getElementById("id026").innerHTML = document.getElementById("id016").nodeType;
+    </script>
+
+<!-- 
+The most important nodeType properties are:
+
+Node	               Type	 Example
+ELEMENT_NODE	         1	 <h1 class="heading">W3Schools</h1>
+ATTRIBUTE_NODE	         2	 class = "heading" (deprecated)
+TEXT_NODE	             3	 W3Schools -->
+<!-- COMMENT_NODE	     8	 This is a comment -->
+<!-- DOCUMENT_NODE	     9	 The HTML document itself (the parent of <html>)
+DOCUMENT_TYPE_NODE   	10	 <!Doctype html> -->
+
+</body>
+
+</html>
