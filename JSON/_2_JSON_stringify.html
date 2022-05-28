@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>1.Create a JSON string from a JavaScript object.</h2>
+    <p id="demo"></p>
+
+    <script>
+        const obj = { name: "John", age: 30, city: "New York" };
+        const myJSON = JSON.stringify(obj);
+        document.getElementById("demo").innerHTML = myJSON;
+    </script>
+
+    <h2>2.Create a JSON string from a JavaScript array.</h2>
+    <p id="demo2"></p>
+
+    <script>
+        const arr = ["John", "Peter", "Sally", "Jane"];
+        const myJSON2 = JSON.stringify(arr);
+        document.getElementById("demo2").innerHTML = myJSON2;
+    </script>
+
+
+    <h2>3.Store and retrieve data from local storage.</h2>
+    <p id="demo3"></p>
+
+    <script>
+        // Storing data:
+        const myObj3 = { name: "John", age: 31, city: "New York" };
+        const myJSON3 = JSON.stringify(myObj3);
+        localStorage.setItem("testJSON", myJSON3);
+
+        // Retrieving data:
+        let text3 = localStorage.getItem("testJSON");
+        let obj3 = JSON.parse(text3);
+        document.getElementById("demo3").innerHTML = obj3.name;
+    </script>
+
+
+    <h2>4.JSON.stringify() converts date objects into strings.</h2>
+    <p id="demo4"></p>
+
+    <script>
+        const obj4 = { name: "John", today: new Date(), city: "New York" };
+        const myJSON4 = JSON.stringify(obj4);
+        document.getElementById("demo4").innerHTML = myJSON4;
+    </script>
+
+    <h2>5.JSON.stringify() will remove any functions from an object.</h2>
+    <p id="demo5"></p>
+
+    <script>
+        const obj5 = { name: "John", age: function () { return 30; }, city: "New York" };
+        const myJSON5 = JSON.stringify(obj5);
+        document.getElementById("demo5").innerHTML = myJSON5;
+    </script>
+
+    <h2>6.JSON.stringify() will remove any functions from an object.</h2>
+    <p>Convert functions into strings to keep them in the JSON object.</p>
+
+    <p id="demo6"></p>
+
+    <script>
+        const obj6 = { name: "John", age: function () { return 30; }, city: "New York" };
+        obj6.age = obj6.age.toString();
+        const myJSON6 = JSON.stringify(obj6);
+        document.getElementById("demo6").innerHTML = myJSON6;
+    </script>
+
+
+
+</body>
+
+</html>
