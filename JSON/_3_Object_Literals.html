@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>1.Creating an Object from a JSON Literal</h2>
+    <p id="demo"></p>
+
+    <script>
+        const myObj = { "name": "John", "age": 30, "car": null };
+        document.getElementById("demo").innerHTML = myObj.name;
+    </script>
+
+
+    <h2>2.Creating an Object Parsing JSON</h2>
+    <p id="demo2"></p>
+
+    <script>
+        const myJSON2 = '{"name":"John", "age":30, "car":null}';
+        const myObj2 = JSON.parse(myJSON2);
+        document.getElementById("demo2").innerHTML = myObj2.name;
+    </script>
+
+    <h2>3.Access a JavaScript Object</h2>
+    <p id="demo3"></p>
+
+    <script>
+        const myJSON3 = '{"name":"John", "age":30, "car":null}';
+        const myObj3 = JSON.parse(myJSON3);
+        document.getElementById("demo3").innerHTML = myObj3.name;
+    </script>
+
+
+    <h2>4.Access a JavaScript Object</h2>
+    <p id="demo4"></p>
+
+    <script>
+        const myJSON4 = '{"name":"John", "age":30, "car":null}';
+        const myObj4 = JSON.parse(myJSON4);
+        document.getElementById("demo4").innerHTML = myObj4["name"];
+    </script>
+
+
+    <h2>5.Looping Object Properties</h2>
+    <p id="demo5"></p>
+
+    <script>
+        const myJSON5 = '{"name":"John", "age":30, "car":null}';
+        const myObj5 = JSON.parse(myJSON5);
+
+        let text5 = "";
+        for (const x in myObj5) {
+            text5 += x + ", ";
+        }
+        document.getElementById("demo5").innerHTML = text5;
+    </script>
+
+
+    <h2>6.Looping JavaScript Object Values</h2>
+    <p id="demo6"></p>
+
+    <script>
+        const myJSON6 = '{"name":"John", "age":30, "car":null}';
+        const myObj6 = JSON.parse(myJSON6);
+
+        let text6 = "";
+        for (const x in myObj6) {
+            text6 += myObj6[x] + ", ";
+        }
+        document.getElementById("demo6").innerHTML = text6;
+    </script>
+
+
+</body>
+
+</html>
