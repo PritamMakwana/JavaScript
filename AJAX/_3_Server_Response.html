@@ -1,0 +1,126 @@
+<!-- Property	Description
+responseText	get the response data as a string
+responseXML	get the response data as XML data -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h2>1 .responseText</h2>
+    <button type="button" onclick="loadDoc()">Change Content</button>
+    <div id="demo"></div>
+    </div>
+
+    <script>
+        function loadDoc() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                document.getElementById("demo").innerHTML =
+                    xhttp.responseText;
+            }
+            xhttp.open("GET", "ajax_info.txt");
+            xhttp.send();
+        }
+    </script>
+
+
+    <!DOCTYPE html>
+    <html>
+
+    <body>
+
+        <h2>2 .responseXML</h2>
+
+        <button type="button" onclick="loadDoc()">Get my CD collection</button>
+        <br><br>
+        <table id="demo2"></table>
+
+        <script>
+            function loadDoc() {
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function () {
+                    myFunction(this);
+                }
+                xhttp.open("GET", "cd_catalog.xml");
+                xhttp.send();
+            }
+            function myFunction(xml) {
+                const xmlDoc = xml.responseXML;
+                const x = xmlDoc.getElementsByTagName("CD");
+                let table = "<tr><th>Artist</th><th>Title</th></tr>";
+                for (let i = 0; i < x.length; i++) {
+                    table += "<tr><td>" +
+                        x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+                        "</td><td>" +
+                        x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+                        "</td></tr>";
+                }
+                document.getElementById("demo2").innerHTML = table;
+            }
+        </script>
+
+
+        <!-- Server Response Methods
+Method	Description
+getResponseHeader()	Returns specific header information from the server resource
+getAllResponseHeaders()	Returns all the header information from the server resource -->
+
+        <h2>3 .getAllResponseHeaders()</h2>
+        <p>The getAllResponseHeaders() function returns all the header information of a resource, like length,
+            server-type, content-type, last-modified, etc:</p>
+
+        <p id="demo3"></p>
+
+        <script>
+            const xhttp3 = new XMLHttpRequest();
+            xhttp3.onload = function () {
+                document.getElementById("demo3").innerHTML =
+                    this.getAllResponseHeaders();
+            }
+            xhttp3.open("GET", "ajax_info.txt");
+            xhttp3.send();
+        </script>
+
+
+        <h2>4.getResponseHeader()</h2>
+
+        <p>The getResponseHeader() function is used to return specific header information from a resource, like length,
+            server-type, content-type, last-modified, etc:</p>
+
+        <p>Last modified: <span id="demo4"></span></p>
+
+        <script>
+            const xhttp4 = new XMLHttpRequest();
+            xhttp4.onload = function () {
+                document.getElementById("demo4").innerHTML =
+                    this.getResponseHeader("Last-Modified");
+            }
+            xhttp4.open("GET", "ajax_info.txt");
+            xhttp4.send();
+        </script>
+    </body>
+
+    </html>
+
+
+</body>
+
+</html>
