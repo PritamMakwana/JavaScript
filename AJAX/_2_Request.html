@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>1.Synchronous Request</h2>
+
+    <p id="demo">Let AJAX change this text.</p>
+
+    <button type="button" onclick="loadDoc()">Change Content</button>
+
+    <script>
+        function loadDoc() {
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.open("GET", "ajax_info.txt", false);
+            xhttp.send();
+
+            document.getElementById("demo").innerHTML = xhttp.responseText;
+        }
+    </script>
+
+
+    <h2>2.The GET use</h2>
+    <button type="button" onclick="loadDoc2()">Request data</button>
+    <p id="demo2"></p>
+
+    <script>
+        function loadDoc2() {
+            const xhttp2 = new XMLHttpRequest();
+            xhttp2.onload = function () {
+                document.getElementById("demo2").innerHTML = xhttp2.responseText;
+            }
+            xhttp2.open("GET", "ajax_info.txt");
+            xhttp2.send();
+        }
+    </script>
+
+
+</body>
+
+</html>
