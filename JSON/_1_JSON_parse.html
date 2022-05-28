@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>1.Creating an Object from a JSON String</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        const txt = '{"name":"John", "age":30, "city":"New York"}'
+        const obj = JSON.parse(txt);
+        document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+    </script>
+
+
+    <h2>2.Parsing a JSON Array.</h2>
+    <p>Data written as an JSON array will be parsed into a JavaScript array.</p>
+    <p id="demo2"></p>
+
+    <script>
+        const text2 = '[ "Ford", "BMW", "Audi", "Fiat" ]';
+        const myArr = JSON.parse(text2);
+        document.getElementById("demo2").innerHTML = myArr[0];
+    </script>
+
+
+    <h2>3.Convert a string into a date object.</h2>
+    <p id="demo3"></p>
+
+    <script>
+        const text = '{"name":"John", "birth":"1986-12-14", "city":"New York"}';
+        const obj3 = JSON.parse(text);
+        obj3.birth = new Date(obj3.birth);
+        document.getElementById("demo3").innerHTML = obj3.name + ", " + obj3.birth; 
+    </script>
+
+    <h2>4.Convert a string into a date object.</h2>
+
+    <p id="demo4"></p>
+
+    <script>
+        const text4 = '{"name":"John", "birth":"1986-12-14", "city":"New York"}';
+        const obj4 = JSON.parse(text4, function (key, value) {
+            if (key == "birth") {
+                return new Date(value);
+            } else {
+                return value;
+            }
+        });
+        document.getElementById("demo4").innerHTML = obj4.name + ", " + obj4.birth; 
+    </script>
+
+
+    <h2>5.Convert a string into a function.</h2>
+    <p id="demo5"></p>
+
+    <script>
+        const text5 = '{"name":"John", "age":"function() {return 30;}", "city":"New York"}';
+        const obj5 = JSON.parse(text5);
+        obj5.age = eval("(" + obj5.age + ")");
+        document.getElementById("demo5").innerHTML = obj5.name + ", " + obj5.age(); 
+    </script>
+
+</body>
+
+</html>
